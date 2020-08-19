@@ -5,7 +5,7 @@ class CommentInput extends Component{
         super()
         this.state = {
             username: '',
-            content: ''
+            comment: ''
         }
     }
     handleUsernameChange(e){
@@ -16,7 +16,7 @@ class CommentInput extends Component{
 
     handleCommentChange(e){
         this.setState({
-            content: e.target.value
+            comment: e.target.comment
         })
     }
 
@@ -44,7 +44,11 @@ class CommentInput extends Component{
                     <span className='comment-field-name'>Content：</span>
                     <div className='comment-field-input'>
                         <textarea
+<<<<<<< HEAD
                             value={this.state.content}
+=======
+                            value={this.state.comment}
+>>>>>>> c4999e63415cb585f39cba50b2b9dff193bbd7f5
                             onChange={this.handleCommentChange.bind(this)}
                         />
                     </div>
@@ -58,4 +62,8 @@ class CommentInput extends Component{
         )
     }
 }
+<<<<<<< HEAD
 export default CommentInput
+=======
+export default CommentInput
+>>>>>>> c4999e63415cb585f39cba50b2b9dff193bbd7f5
