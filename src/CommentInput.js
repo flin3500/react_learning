@@ -1,27 +1,26 @@
-import React,{Component} from 'react'
+import React, {Component} from 'react'
 
 class CommentInput extends Component{
     constructor(){
-        super ()
+        super()
         this.state = {
             username: '',
             content: ''
         }
     }
-
-    handleUsernameChange (e){
+    handleUsernameChange(e){
         this.setState({
-                username: e.target.value
-            })
+            username:e.target.value
+        })
     }
 
-    handleContentChange (e){
+    handleCommentChange(e){
         this.setState({
             content: e.target.value
         })
     }
 
-    handleSubmit () {
+    handleSubmit(){
         if (this.props.onSubmit) {
             const { username, content } = this.state
             this.props.onSubmit({username, content})
@@ -29,12 +28,11 @@ class CommentInput extends Component{
         this.setState({ content: '' })
     }
 
-
-    render() {
+    render(){
         return (
             <div className='comment-input'>
                 <div className='comment-field'>
-                    <span className='comment-field-name'>Username:</span>
+                    <span className='comment-field-name'>Username：</span>
                     <div className='comment-field-input'>
                         <input
                             value={this.state.username}
@@ -43,17 +41,16 @@ class CommentInput extends Component{
                     </div>
                 </div>
                 <div className='comment-field'>
-                    <span className='comment-field-name'>Content:</span>
+                    <span className='comment-field-name'>Content：</span>
                     <div className='comment-field-input'>
                         <textarea
                             value={this.state.content}
-                            onChange={this.handleContentChange.bind(this)}
+                            onChange={this.handleCommentChange.bind(this)}
                         />
                     </div>
                 </div>
                 <div className='comment-field-button'>
-                    <button
-                        onClick={this.handleSubmit.bind(this)}>
+                    <button onClick={this.handleSubmit.bind(this)}>
                         Post
                     </button>
                 </div>
@@ -61,5 +58,4 @@ class CommentInput extends Component{
         )
     }
 }
-
 export default CommentInput
